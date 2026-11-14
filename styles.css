@@ -635,6 +635,12 @@ img {
         padding: 19px 5%;
         font-size: 8px;
     }
+    /* SHOW MOBILE NAVIGATION */
+
+    .nav-links.active {
+        transform: translateX(0);
+        visibility: visible;
+    }
 }
 
 @media (max-width: 480px) {
