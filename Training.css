@@ -1,0 +1,914 @@
+
+/* =========================================
+   TONEL2FAME — TRAINING PAGE
+   LUXURY HAIR ACADEMY
+========================================= */
+
+
+/* =========================================
+   TRAINING HERO
+========================================= */
+
+.training-hero {
+    min-height: 88vh;
+    min-height: 88svh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(23, 21, 19, 0.95),
+            rgba(23, 21, 19, 0.55)
+        ),
+        linear-gradient(
+            0deg,
+            rgba(23, 21, 19, 0.7),
+            transparent 60%
+        ),
+        url("Images/Main.png");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.training-hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: radial-gradient(
+        circle at 75% 45%,
+        rgba(201, 164, 106, 0.14),
+        transparent 40%
+    );
+
+    pointer-events: none;
+}
+
+.training-hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 90%;
+    max-width: 950px;
+    margin: auto;
+
+    padding: 160px 0 120px;
+    text-align: center;
+}
+
+.training-eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    margin-bottom: 30px;
+
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+.training-eyebrow span {
+    width: 35px;
+    height: 1px;
+    background: var(--gold);
+}
+
+.training-hero h1 {
+    max-width: 850px;
+    margin: auto;
+
+    color: var(--cream);
+    font-family: var(--heading-font);
+    font-size: clamp(58px, 9vw, 105px);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -3px;
+}
+
+.training-hero h1 em {
+    color: var(--gold);
+}
+
+.training-hero-content > p {
+    max-width: 550px;
+    margin: 28px auto 35px;
+
+    color: rgba(244, 237, 223, 0.75);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.training-hero-content .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.training-hero-label {
+    position: absolute;
+    right: 5%;
+    bottom: 35px;
+
+    color: rgba(244, 237, 223, 0.55);
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+
+/* =========================================
+   TRAINING INTRO
+========================================= */
+
+.training-intro {
+    padding: 110px 0 75px;
+    background: var(--black);
+    text-align: center;
+}
+
+.training-intro-content {
+    max-width: 750px;
+    margin: auto;
+}
+
+.training-intro .section-eyebrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.training-intro h2 {
+    margin-top: 24px;
+
+    color: var(--cream);
+    font-family: var(--heading-font);
+    font-size: clamp(38px, 5vw, 62px);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.training-intro h2 em {
+    color: var(--gold);
+}
+
+.training-intro p {
+    max-width: 600px;
+    margin: 22px auto 0;
+
+    color: rgba(244, 237, 223, 0.65);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+
+/* =========================================
+   TRAINING COURSES
+========================================= */
+
+.training-courses {
+    padding: 70px 0 120px;
+    background: var(--black);
+}
+
+.training-section-heading {
+    max-width: 650px;
+    margin: 0 auto 65px;
+    text-align: center;
+}
+
+.training-section-heading .section-eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.training-section-heading h2 {
+    margin-top: 23px;
+
+    color: var(--cream);
+    font-family: var(--heading-font);
+    font-size: clamp(40px, 5vw, 62px);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.training-section-heading h2 em {
+    color: var(--gold);
+}
+
+.training-section-heading > p {
+    margin-top: 18px;
+
+    color: rgba(244, 237, 223, 0.6);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* COURSE GRID */
+
+.training-course-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+
+/* COURSE CARD */
+
+.training-course-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    min-height: 390px;
+    padding: 35px 30px;
+
+    overflow: hidden;
+
+    background: linear-gradient(
+        145deg,
+        #24201b,
+        #191714
+    );
+
+    border: 1px solid rgba(201, 164, 106, 0.16);
+
+    transition:
+        transform 0.45s ease,
+        border-color 0.45s ease,
+        box-shadow 0.45s ease;
+}
+
+.training-course-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--gold);
+    transition: width 0.5s ease;
+}
+
+.training-course-card:hover {
+    transform: translateY(-9px);
+    border-color: rgba(201, 164, 106, 0.65);
+
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+.training-course-card:hover::before {
+    width: 100%;
+}
+
+
+/* COURSE NUMBER */
+
+.training-course-number {
+    position: absolute;
+    top: 22px;
+    right: 25px;
+
+    color: rgba(201, 164, 106, 0.25);
+    font-family: var(--heading-font);
+    font-size: 35px;
+}
+
+
+/* COURSE ICON */
+
+.training-course-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 55px;
+    height: 55px;
+
+    margin-bottom: 28px;
+
+    border: 1px solid rgba(201, 164, 106, 0.4);
+    border-radius: 50%;
+
+    color: var(--gold);
+    font-size: 19px;
+
+    transition: all 0.4s ease;
+}
+
+.training-course-card:hover .training-course-icon {
+    background: var(--gold);
+    color: var(--black);
+    transform: rotateY(180deg);
+}
+
+
+/* COURSE TEXT */
+
+.training-course-card h3 {
+    margin-bottom: 14px;
+
+    color: var(--cream);
+    font-family: var(--heading-font);
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.training-course-card > p {
+    min-height: 65px;
+
+    color: rgba(244, 237, 223, 0.62);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+
+/* COURSE PRICE */
+
+.training-course-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    margin-top: auto;
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(201, 164, 106, 0.2);
+}
+
+.training-course-bottom span {
+    color: rgba(244, 237, 223, 0.5);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.training-course-bottom strong {
+    color: var(--gold);
+    font-family: var(--heading-font);
+    font-size: 25px;
+    font-weight: 400;
+}
+
+
+/* ENROL LINK */
+
+.training-course-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 23px;
+
+    color: var(--cream);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+
+    transition: color 0.3s ease;
+}
+
+.training-course-link i {
+    color: var(--gold);
+    transition: transform 0.3s ease;
+}
+
+.training-course-link:hover {
+    color: var(--gold);
+}
+
+.training-course-link:hover i {
+    transform: translateX(6px);
+}
+
+
+/* FEATURED COURSE */
+
+.training-course-card.featured {
+    border-color: var(--gold);
+    background: linear-gradient(
+        145deg,
+        #30271d,
+        #1b1814
+    );
+}
+
+.training-popular {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    padding: 8px 14px;
+
+    background: var(--gold);
+    color: var(--black);
+
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+.training-course-card.featured .training-course-number {
+    top: 35px;
+}
+
+
+/* PRICE NOTE */
+
+.training-price-note {
+    margin-top: 28px;
+
+    color: rgba(244, 237, 223, 0.45);
+    font-size: 11px;
+    text-align: center;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   TRAINING BENEFITS
+========================================= */
+
+.training-benefits {
+    padding: 120px 0;
+    background: var(--black-light);
+}
+
+.training-benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 85px;
+}
+
+
+/* BENEFITS IMAGE */
+
+.training-benefits-image {
+    position: relative;
+    min-height: 540px;
+}
+
+.training-benefits-image::before {
+    content: "";
+    position: absolute;
+    top: -17px;
+    left: -17px;
+
+    width: 100%;
+    height: 100%;
+
+    border: 1px solid var(--gold);
+    z-index: 0;
+}
+
+.training-benefits-image img {
+    position: relative;
+    z-index: 1;
+
+    display: block;
+    width: 100%;
+    height: 540px;
+
+    object-fit: cover;
+}
+
+
+/* BENEFITS CONTENT */
+
+.training-benefits-content .section-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.training-benefits-content h2 {
+    margin: 25px 0 20px;
+
+    color: var(--cream);
+    font-family: var(--heading-font);
+    font-size: clamp(40px, 5vw, 58px);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.training-benefits-content h2 em {
+    color: var(--gold);
+}
+
+.training-benefits-content > p {
+    margin-bottom: 35px;
+
+    color: rgba(244, 237, 223, 0.65);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+
+/* BENEFIT ITEMS */
+
+.training-benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+
+    margin-top: 25px;
+}
+
+.training-benefit > i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 30px;
+    height: 30px;
+
+    border: 1px solid rgba(201, 164, 106, 0.5);
+    border-radius: 50%;
+
+    color: var(--gold);
+    font-size: 11px;
+}
+
+.training-benefit h4 {
+    margin-bottom: 7px;
+
+    color: var(--cream);
+    font-family: var(--heading-font);
+    font-size: 19px;
+    font-weight: 400;
+}
+
+.training-benefit p {
+    color: rgba(244, 237, 223, 0.55);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   TRAINING CONTACT CTA
+========================================= */
+
+.training-contact {
+    position: relative;
+    overflow: hidden;
+
+    padding: 125px 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(201, 164, 106, 0.13),
+            transparent 50%
+        ),
+        var(--black);
+
+    text-align: center;
+}
+
+.training-contact-content {
+    max-width: 760px;
+    margin: auto;
+}
+
+.training-contact .section-eyebrow {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.training-contact h2 {
+    margin-top: 25px;
+
+    color: var(--cream);
+    font-family: var(--heading-font);
+    font-size: clamp(40px, 5vw, 65px);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.training-contact h2 em {
+    color: var(--gold);
+}
+
+.training-contact p {
+    max-width: 520px;
+    margin: 22px auto 35px;
+
+    color: rgba(244, 237, 223, 0.65);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.training-contact .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+}
+
+
+/* =========================================
+   TRAINING PAGE SCROLL ANIMATIONS
+========================================= */
+
+.training-hero .reveal,
+.training-intro .reveal,
+.training-section-heading.reveal,
+.training-course-card.reveal,
+.training-benefits .reveal-left,
+.training-benefits .reveal-right,
+.training-contact .reveal {
+    opacity: 0;
+    transform: translateY(45px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.training-benefits .reveal-left {
+    transform: translateX(-45px);
+}
+
+.training-benefits .reveal-right {
+    transform: translateX(45px);
+}
+
+.training-hero .reveal.revealed,
+.training-intro .reveal.revealed,
+.training-section-heading.reveal.revealed,
+.training-course-card.reveal.revealed,
+.training-benefits .reveal-left.revealed,
+.training-benefits .reveal-right.revealed,
+.training-contact .reveal.revealed {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+
+/* STAGGERED COURSE CARDS */
+
+.training-course-card:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.training-course-card:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.training-course-card:nth-child(4) {
+    transition-delay: 0.1s;
+}
+
+.training-course-card:nth-child(5) {
+    transition-delay: 0.2s;
+}
+
+.training-course-card:nth-child(6) {
+    transition-delay: 0.3s;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .training-course-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .training-benefits-grid {
+        gap: 55px;
+    }
+
+    .training-benefits-image,
+    .training-benefits-image img {
+        min-height: 470px;
+        height: 470px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .training-hero {
+        min-height: 78svh;
+        background-position: 60% center;
+    }
+
+    .training-hero-content {
+        padding: 145px 0 100px;
+    }
+
+    .training-hero h1 {
+        font-size: clamp(52px, 10vw, 76px);
+        letter-spacing: -2px;
+    }
+
+    .training-hero-content > p {
+        font-size: 13px;
+    }
+
+    .training-intro {
+        padding: 90px 0 55px;
+    }
+
+    .training-courses {
+        padding: 50px 0 90px;
+    }
+
+    .training-section-heading {
+        margin-bottom: 45px;
+    }
+
+    .training-course-card {
+        min-height: 375px;
+        padding: 30px 23px;
+    }
+
+    .training-benefits {
+        padding: 90px 0;
+    }
+
+    .training-benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .training-benefits-image,
+    .training-benefits-image img {
+        height: 480px;
+        min-height: 480px;
+    }
+
+    .training-contact {
+        padding: 95px 0;
+    }
+}
+
+
+@media (max-width: 520px) {
+
+    .training-hero {
+        min-height: 75svh;
+    }
+
+    .training-hero-content {
+        width: 88%;
+        padding: 135px 0 95px;
+    }
+
+    .training-eyebrow {
+        gap: 9px;
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .training-eyebrow span {
+        width: 20px;
+    }
+
+    .training-hero h1 {
+        font-size: clamp(45px, 12vw, 61px);
+        line-height: 1.15;
+    }
+
+    .training-hero-content > p {
+        font-size: 12px;
+        margin-top: 20px;
+    }
+
+    .training-hero-label {
+        bottom: 22px;
+        font-size: 8px;
+    }
+
+    .training-intro {
+        padding: 75px 0 40px;
+    }
+
+    .training-intro h2 {
+        font-size: 39px;
+    }
+
+    .training-intro p {
+        font-size: 12px;
+    }
+
+    .training-courses {
+        padding: 40px 0 75px;
+    }
+
+    .training-section-heading h2 {
+        font-size: 39px;
+    }
+
+    .training-section-heading > p {
+        font-size: 12px;
+    }
+
+    .training-course-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .training-course-card {
+        min-height: 350px;
+        padding: 30px 25px;
+    }
+
+    .training-course-card h3 {
+        font-size: 25px;
+    }
+
+    .training-course-bottom strong {
+        font-size: 27px;
+    }
+
+    .training-benefits {
+        padding: 75px 0;
+    }
+
+    .training-benefits-grid {
+        gap: 45px;
+    }
+
+    .training-benefits-image,
+    .training-benefits-image img {
+        height: 360px;
+        min-height: 360px;
+    }
+
+    .training-benefits-image::before {
+        top: -10px;
+        left: -10px;
+    }
+
+    .training-benefits-content h2 {
+        font-size: 40px;
+    }
+
+    .training-contact {
+        padding: 80px 0;
+    }
+
+    .training-contact h2 {
+        font-size: 40px;
+    }
+
+    .training-contact p {
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .training-hero .reveal,
+    .training-intro .reveal,
+    .training-section-heading.reveal,
+    .training-course-card.reveal,
+    .training-benefits .reveal-left,
+    .training-benefits .reveal-right,
+    .training-contact .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .training-course-card,
+    .training-course-icon,
+    .training-course-link i {
+        transition: none;
+    }
+}
