@@ -1,385 +1,621 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Learn professional hair styling, frontal installation, wig making, crochet styling and more at Tonel2Fame Hair Academy.">
+
     <meta name="theme-color" content="#171513">
-    <meta name="description" content="Learn professional hairstyling at Tonel2Fame Hair Academy. Explore our practical hair training courses and fees.">
-    <title>Hair Academy & Training | Tonel2Fame</title>
+
+    <title>Hair Academy | Tonel2Fame</title>
+
+    <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+
+    <!-- TRAINING PAGE CSS -->
     <link rel="stylesheet" href="training.css">
 </head>
 
 <body>
 
-<header class="header" id="header">
-    <nav class="navbar container">
-
-        <a href="index.html#home" class="logo">
-            <span class="logo-main">TONEL<span class="logo-number">2</span>FAME</span>
-            <span class="logo-subtitle">HAIR & BEAUTY STUDIO</span>
-        </a>
-
-        <ul class="nav-links" id="navLinks">
-            <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="index.html#about" class="nav-link">About</a></li>
-            <li><a href="index.html#services" class="nav-link">Services</a></li>
-            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-            <li><a href="index.html#products" class="nav-link">Products</a></li>
-            <li><a href="training.html" class="nav-link active">Training</a></li>
-
-            <li class="mobile-booking">
-                <a href="#training-contact" class="mobile-book-btn">
-                    ENROL FOR TRAINING
-                </a>
-            </li>
-        </ul>
-
-        <a href="#training-contact" class="nav-booking">
-            ENROL FOR TRAINING
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </a>
-
-        <button class="menu-toggle" id="menuToggle"
-            aria-label="Open navigation menu"
-            aria-expanded="false"
-            aria-controls="navLinks">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-    </nav>
-</header>
+    <!-- PAGE LOADER -->
+    <div class="training-loader" id="trainingLoader">
+        <div class="loader-content">
+            <span>TONEL<span>2</span>FAME</span>
+            <div class="loader-line"></div>
+            <p>HAIR ACADEMY</p>
+        </div>
+    </div>
 
 
-<main>
+    <!-- HEADER -->
+    <header class="training-header" id="trainingHeader">
 
-    <!-- TRAINING HERO -->
+        <nav class="training-navbar container">
+
+            <!-- LOGO -->
+            <a href="index.html#home" class="training-logo">
+                <span class="training-logo-main">
+                    TONEL<span>2</span>FAME
+                </span>
+
+                <span class="training-logo-subtitle">
+                    HAIR & BEAUTY STUDIO
+                </span>
+            </a>
+
+
+            <!-- DESKTOP NAVIGATION -->
+            <ul class="training-nav-links" id="trainingNavLinks">
+
+                <li><a href="index.html#home">HOME</a></li>
+
+                <li><a href="index.html#about">ABOUT</a></li>
+
+                <li><a href="index.html#services">SERVICE</a></li>
+
+                <li><a href="gallery.html">GALLERY</a></li>
+
+                <li><a href="training.html" class="active">TRAINING</a></li>
+
+                <li><a href="index.html#contact">CONTACT</a></li>
+
+                <li class="mobile-enrol">
+                    <a href="#enrol" class="training-nav-cta">
+                        Enrol Now
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <!-- NAVIGATION BUTTON -->
+            <a href="#enrol" class="training-header-cta">
+                Enrol Now
+            </a>
+
+
+            <!-- MOBILE MENU BUTTON -->
+            <button class="training-menu-toggle"
+                id="trainingMenuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
     <section class="training-hero">
 
         <div class="training-hero-overlay"></div>
 
-        <div class="training-hero-content">
+        <div class="training-hero-content container">
 
             <span class="training-eyebrow reveal">
-                <span></span>
                 TONEL2FAME HAIR ACADEMY
-                <span></span>
             </span>
 
             <h1 class="reveal">
                 Turn Your Passion
-                Into <em>Expertise.</em>
+                Into <span>Expertise.</span>
             </h1>
 
             <p class="reveal">
-                Discover your creativity, master professional
-                hairstyling techniques and build the confidence
-                to turn your passion into a skill.
+                Discover your creativity, master professional hair
+                techniques and build the confidence to turn your
+                passion for beauty into a skill.
             </p>
 
-            <a href="#training-courses" class="btn btn-primary reveal">
-                EXPLORE OUR COURSES
-                <i class="fa-solid fa-arrow-down"></i>
-            </a>
+            <div class="training-hero-buttons reveal">
+
+                <a href="#programmes" class="training-btn training-btn-primary">
+                    Explore Programmes
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+                <a href="#enrol" class="training-btn training-btn-outline">
+                    Join Our Academy
+                </a>
+
+            </div>
+
+            <div class="training-hero-note reveal">
+                <span></span>
+                LEARN. CREATE. EXCEL.
+            </div>
 
         </div>
 
-        <span class="training-hero-label">LEARN · CREATE · EXCEL</span>
+        <div class="training-hero-bottom">
+            <span>SCROLL TO EXPLORE</span>
+            <i class="fas fa-arrow-down"></i>
+        </div>
 
     </section>
 
 
     <!-- INTRODUCTION -->
-    <section class="training-intro">
-        <div class="container">
+    <section class="training-intro section-padding">
+
+        <div class="container training-intro-grid">
+
+            <div class="training-intro-image reveal">
+
+                <img src="Images/Tonel Academy.png"
+                    alt="Professional hair styling training">
+
+                <div class="training-image-caption">
+                    <span>01</span>
+                    <p>Creativity Meets Excellence</p>
+                </div>
+
+            </div>
+
 
             <div class="training-intro-content reveal">
 
                 <span class="section-eyebrow">
-                    <span></span>
-                    LEARN THE ART OF BEAUTY
+                    WELCOME TO OUR ACADEMY
                 </span>
 
                 <h2>
-                    Your Journey To
-                    <em>Professional Excellence.</em>
+                    More Than Learning.
+                    <span>It's Your Future.</span>
                 </h2>
 
                 <p>
                     At Tonel2Fame Hair Academy, we believe that
-                    beautiful work begins with the right knowledge
-                    and practical experience. Our training is
-                    designed to help you develop valuable
-                    hairstyling skills.
+                    every great stylist starts with the right
+                    foundation.
                 </p>
+
+                <p>
+                    Our training programmes are designed to help
+                    aspiring hairstylists develop practical skills,
+                    understand professional techniques and grow
+                    their confidence in the beauty industry.
+                </p>
+
+                <a href="#programmes" class="training-text-link">
+                    Discover Our Programmes
+                    <i class="fas fa-arrow-right"></i>
+                </a>
 
             </div>
 
         </div>
+
     </section>
 
 
-    <!-- COURSES -->
-    <section class="training-courses" id="training-courses">
+    <!-- TRAINING PROGRAMMES -->
+    <section class="training-programmes section-padding" id="programmes">
 
         <div class="container">
 
             <div class="training-section-heading reveal">
 
                 <span class="section-eyebrow">
-                    <span></span>
-                    OUR TRAINING PROGRAMMES
+                    WHAT YOU CAN LEARN
                 </span>
 
                 <h2>
-                    Choose Your
-                    <em>Specialisation.</em>
+                    Our Training <span>Programmes</span>
                 </h2>
 
                 <p>
-                    Explore our training programmes and choose
-                    the skill you want to master.
+                    Develop practical beauty skills through
+                    specialised hair training programmes.
                 </p>
+                
 
             </div>
 
 
-            <div class="training-course-grid">
+            <div class="training-programme-grid">
 
-                <article class="training-course-card reveal">
+                <!-- PROGRAMME 1 -->
+                <article class="training-card reveal">
 
-                    <div class="training-course-number">01</div>
+                    <div class="training-card-image">
+                        <img src="Images/Frontal.png"
+                            alt="Frontal installation training">
 
-                    <div class="training-course-icon">
-                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <span class="training-card-number">01</span>
                     </div>
 
-                    <h3>Frontal Installation</h3>
+                    <div class="training-card-content">
 
-                    <p>
-                        Learn professional frontal installation,
-                        styling and finishing techniques.
-                    </p>
+                        <span class="training-card-category">
+                            HAIR STYLING
+                        </span>
 
-                    <div class="training-course-bottom">
-                        <span>TRAINING FEE</span>
-                        <strong>₦80,000</strong>
+                        <h3>Frontal Installation</h3>
+
+                        <p>
+                            Learn professional frontal installation
+                            techniques and how to achieve beautiful,
+                            natural-looking finishes.
+                        </p>
+
+                        <div class="training-card-price">
+                            <span>TRAINING FEE</span>
+                            <strong>₦80,000</strong>
+                        </div>
+
+                        <a href="#enrol">
+                            Enquire About Training
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
                     </div>
-
-                    <a href="#training-contact" class="training-course-link">
-                        ENROL NOW <i class="fa-solid fa-arrow-right"></i>
-                    </a>
 
                 </article>
 
 
-                <article class="training-course-card featured reveal">
+                <!-- PROGRAMME 2 -->
+                <article class="training-card reveal">
 
-                    <div class="training-popular">FEATURED COURSE</div>
+                    <div class="training-card-image">
+                        <img src="Images/Wig Making.png"
+                            alt="Professional wig making training">
 
-                    <div class="training-course-number">02</div>
-
-                    <div class="training-course-icon">
-                        <i class="fa-solid fa-scissors"></i>
+                        <span class="training-card-number">02</span>
                     </div>
 
-                    <h3>Wig Making</h3>
+                    <div class="training-card-content">
 
-                    <p>
-                        Learn wig construction, sewing,
-                        customization and professional finishing.
-                    </p>
+                        <span class="training-card-category">
+                            WIG CRAFT
+                        </span>
 
-                    <div class="training-course-bottom">
-                        <span>TRAINING FEE</span>
-                        <strong>₦120,000</strong>
+                        <h3>Wig Making</h3>
+
+                        <p>
+                            Learn the fundamentals of wig construction,
+                            styling and creating beautiful custom wigs.
+                        </p>
+
+                        <div class="training-card-price">
+                            <span>TRAINING FEE</span>
+                            <strong>₦100,000</strong>
+                        </div>
+
+                        <a href="#enrol">
+                            Enquire About Training
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
                     </div>
-
-                    <a href="#training-contact" class="training-course-link">
-                        ENROL NOW <i class="fa-solid fa-arrow-right"></i>
-                    </a>
 
                 </article>
 
 
-                <article class="training-course-card reveal">
+                <!-- PROGRAMME 3 -->
+                <article class="training-card reveal">
 
-                    <div class="training-course-number">03</div>
+                    <div class="training-card-image">
+                        <img src="Images/ventilation.png"
+                            alt="Crochet hair styling training">
 
-                    <div class="training-course-icon">
-                        <i class="fa-solid fa-sparkles"></i>
+                        <span class="training-card-number">03</span>
                     </div>
 
-                    <h3>Wig Revamping</h3>
+                    <div class="training-card-content">
 
-                    <p>
-                        Master wig restoration, washing,
-                        treatment and beautiful restyling.
-                    </p>
+                        <span class="training-card-category">
+                            CREATIVITY
+                        </span>
 
-                    <div class="training-course-bottom">
-                        <span>TRAINING FEE</span>
-                        <strong>₦50,000</strong>
+                        <h3>VENTILATING</h3>
+
+                        <p>
+                            Develop your ventilating skills and
+                            learn how to create neat, attractive
+                            work
+                        </p>
+
+                        <div class="training-card-price">
+                            <span>TRAINING FEE</span>
+                            <strong>₦60,000</strong>
+                        </div>
+
+                        <a href="#enrol">
+                            Enquire About Training
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
                     </div>
-
-                    <a href="#training-contact" class="training-course-link">
-                        ENROL NOW <i class="fa-solid fa-arrow-right"></i>
-                    </a>
 
                 </article>
 
 
-                <article class="training-course-card reveal">
+                <!-- PROGRAMME 4 -->
+                <article class="training-card reveal">
 
-                    <div class="training-course-number">04</div>
+                    <div class="training-card-image">
+                        <img src="Images/hair revamping.jpg"
+                            alt="Hair revamping training">
 
-                    <div class="training-course-icon">
-                        <i class="fa-solid fa-gem"></i>
+                        <span class="training-card-number">04</span>
                     </div>
 
-                    <h3>Closure Ventilating</h3>
+                    <div class="training-card-content">
 
-                    <p>
-                        Develop precision and learn professional
-                        closure ventilation techniques.
-                    </p>
+                        <span class="training-card-category">
+                            HAIR CARE
+                        </span>
 
-                    <div class="training-course-bottom">
-                        <span>TRAINING FEE</span>
-                        <strong>₦70,000</strong>
+                        <h3>Wig Revamping</h3>
+
+                        <p>
+                            Learn how to restore, refresh and
+                            transform old wigs into beautiful,
+                            renewed hairstyles.
+                        </p>
+
+                        <div class="training-card-price">
+                            <span>TRAINING FEE</span>
+                            <strong>₦50,000</strong>
+                        </div>
+
+                        <a href="#enrol">
+                            Enquire About Training
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
                     </div>
-
-                    <a href="#training-contact" class="training-course-link">
-                        ENROL NOW <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-                </article>
-
-
-                <article class="training-course-card reveal">
-
-                    <div class="training-course-number">05</div>
-
-                    <div class="training-course-icon">
-                        <i class="fa-solid fa-feather"></i>
-                    </div>
-
-                    <h3>Crochet Styling</h3>
-
-                    <p>
-                        Learn crochet installation, styling
-                        and professional finishing.
-                    </p>
-
-                    <div class="training-course-bottom">
-                        <span>TRAINING FEE</span>
-                        <strong>₦60,000</strong>
-                    </div>
-
-                    <a href="#training-contact" class="training-course-link">
-                        ENROL NOW <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-                </article>
-
-
-                <article class="training-course-card reveal">
-
-                    <div class="training-course-number">06</div>
-
-                    <div class="training-course-icon">
-                        <i class="fa-solid fa-heart"></i>
-                    </div>
-
-                    <h3>Hair Treatment</h3>
-
-                    <p>
-                        Understand hair care, treatment
-                        application and healthy hair maintenance.
-                    </p>
-
-                    <div class="training-course-bottom">
-                        <span>TRAINING FEE</span>
-                        <strong>₦35,000</strong>
-                    </div>
-
-                    <a href="#training-contact" class="training-course-link">
-                        ENROL NOW <i class="fa-solid fa-arrow-right"></i>
-                    </a>
 
                 </article>
 
             </div>
-
-            <p class="training-price-note">
-                * All displayed fees are suggested sample prices
-                and must be confirmed by Tonel2Fame.
-            </p>
 
         </div>
 
     </section>
 
 
-    <!-- WHY LEARN WITH US -->
-    <section class="training-benefits">
+    <!-- WHY CHOOSE US -->
+    <section class="training-benefits section-padding">
 
-        <div class="container training-benefits-grid">
+        <div class="container">
 
-            <div class="training-benefits-image reveal-left">
-                <img src="Images/Tonel Academy.png"
-                    alt="Professional hairstyling training at Tonel2Fame"
-                    loading="lazy">
-            </div>
-
-            <div class="training-benefits-content reveal-right">
+            <div class="training-benefits-heading reveal">
 
                 <span class="section-eyebrow">
-                    <span></span>
-                    WHY CHOOSE OUR ACADEMY
+                    THE TONEL2FAME EXPERIENCE
                 </span>
 
                 <h2>
-                    Learn Skills.
-                    Build <em>Confidence.</em>
+                    Why Learn <span>With Us?</span>
                 </h2>
 
                 <p>
-                    Our goal is to help you develop practical
-                    hairstyling knowledge and the confidence
-                    to grow in the beauty industry.
+                    We want you to leave with more than knowledge.
+                    We want you to leave with confidence.
                 </p>
 
-                <div class="training-benefit">
-                    <i class="fa-solid fa-check"></i>
-                    <div>
-                        <h4>Practical Learning</h4>
-                        <p>Develop your skills through hands-on practice.</p>
+            </div>
+
+
+            <div class="training-benefits-grid">
+
+                <div class="training-benefit reveal">
+
+                    <div class="benefit-icon">
+                        <i class="fas fa-hands"></i>
                     </div>
+
+                    <h3>Practical Learning</h3>
+
+                    <p>
+                        Develop your skills through hands-on
+                        learning and practical experience.
+                    </p>
+
                 </div>
 
-                <div class="training-benefit">
-                    <i class="fa-solid fa-check"></i>
-                    <div>
-                        <h4>Professional Guidance</h4>
-                        <p>Learn techniques with professional guidance.</p>
+
+                <div class="training-benefit reveal">
+
+                    <div class="benefit-icon">
+                        <i class="fas fa-user-graduate"></i>
                     </div>
+
+                    <h3>Professional Guidance</h3>
+
+                    <p>
+                        Learn techniques and receive guidance
+                        throughout your training journey.
+                    </p>
+
                 </div>
 
-                <div class="training-benefit">
-                    <i class="fa-solid fa-check"></i>
-                    <div>
-                        <h4>Skill Development</h4>
-                        <p>Build valuable skills for your beauty career.</p>
+                <div class="training-benefit reveal">
+
+                    <div class="benefit-icon">
+                        <i class="fas fa-star"></i>
                     </div>
+
+                    <h3>Skill Development</h3>
+
+                    <p>
+                        Build your creativity, improve your
+                        techniques and grow your confidence.
+                    </p>
+
                 </div>
+
+
+                <div class="training-benefit reveal">
+
+                    <div class="benefit-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+
+                    <h3>Business Inspiration</h3>
+
+                    <p>
+                        Explore how your beauty skills can become
+                        the foundation of a business.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOW TRAINING WORKS -->
+    <section class="training-process section-padding">
+
+        <div class="container">
+
+            <div class="training-section-heading reveal">
+
+                <span class="section-eyebrow">
+                    YOUR JOURNEY STARTS HERE
+                </span>
+
+                <h2>
+                    How It <span>Works</span>
+                </h2>
+
+                <p>
+                    Getting started with Tonel2Fame Hair Academy
+                    is simple.
+                </p>
+
+            </div>
+
+
+            <div class="training-process-grid">
+
+                <div class="process-step reveal">
+
+                    <span class="process-number">01</span>
+
+                    <i class="fas fa-comments"></i>
+
+                    <h3>Make An Enquiry</h3>
+
+                    <p>
+                        Contact us to discuss your preferred
+                        training programme.
+                    </p>
+
+                </div>
+
+
+                <div class="process-step reveal">
+
+                    <span class="process-number">02</span>
+
+                    <i class="fas fa-calendar-check"></i>
+
+                    <h3>Confirm Your Training</h3>
+
+                    <p>
+                        Get information about available training
+                        dates, fees and requirements.
+                    </p>
+
+                </div>
+
+
+                <div class="process-step reveal">
+
+                    <span class="process-number">03</span>
+
+                    <i class="fas fa-scissors"></i>
+
+                    <h3>Start Learning</h3>
+
+                    <p>
+                        Begin developing your skills through
+                        professional hair training.
+                    </p>
+
+                </div>
+
+
+                <div class="process-step reveal">
+
+                    <span class="process-number">04</span>
+
+                    <i class="fas fa-trophy"></i>
+
+                    <h3>Grow Your Skills</h3>
+
+                    <p>
+                        Build your confidence and take your
+                        next step in the beauty industry.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TRAINING GALLERY -->
+    <section class="training-gallery section-padding">
+
+        <div class="container">
+
+            <div class="training-section-heading reveal">
+
+                <span class="section-eyebrow">
+                    CREATIVITY IN ACTION
+                </span>
+
+                <h2>
+                    Learn. Practise. <span>Create.</span>
+                </h2>
+
+                <p>
+                    A glimpse into the artistry and creativity
+                    behind professional hairstyling.
+                </p>
+
+            </div>
+
+
+            <div class="training-gallery-grid">
+
+                <img src="Images/hair styling.png"
+                    alt="Hair styling practice"
+                    class="reveal">
+
+                <img src="Images/Professional wig styling.png"
+                    alt="Professional wig styling"
+                    class="reveal">
+
+                <img src="Images/styling.png"
+                    alt="Hair beauty techniques"
+                    class="reveal">
 
             </div>
 
@@ -389,33 +625,35 @@
 
 
     <!-- ENROLMENT CTA -->
-    <section class="training-contact" id="training-contact">
+    <section class="training-enrol section-padding" id="enrol">
 
         <div class="container">
 
-            <div class="training-contact-content reveal">
+            <div class="training-enrol-content reveal">
 
                 <span class="section-eyebrow">
-                    YOUR NEXT CHAPTER STARTS HERE
+                    YOUR NEXT CHAPTER BEGINS HERE
                 </span>
 
                 <h2>
-                    Ready To Master
-                    <em>Your Craft?</em>
+                    Ready To Turn Your
+                    Passion Into A <span>Profession?</span>
                 </h2>
 
                 <p>
-                    Choose your preferred course and contact us
-                    to enquire about training availability,
-                    schedules and registration.
+                    Take the first step towards mastering your
+                    craft. Contact Tonel2Fame Hair Academy to
+                    enquire about our training programmes.
                 </p>
 
-                <a href="https://wa.me/2349161711509?text=Hello%20Tonel2Fame!%20I%20am%20interested%20in%20your%20hair%20training%20programmes."
-                    class="btn btn-primary"
+                <a href="https://wa.me/2349161711509?text=Hello%20Tonel2Fame%2C%20I%20am%20interested%20in%20your%20hair%20training%20programmes."
                     target="_blank"
-                    rel="noopener noreferrer">
-                    ENQUIRE ON WHATSAPP
-                    <i class="fa-brands fa-whatsapp"></i>
+                    rel="noopener noreferrer"
+                    class="training-btn training-btn-primary">
+
+                    Enquire On WhatsApp
+                    <i class="fab fa-whatsapp"></i>
+
                 </a>
 
             </div>
@@ -424,42 +662,92 @@
 
     </section>
 
-</main>
+
+    <!-- FOOTER -->
+    <footer class="training-footer">
+
+        <div class="container">
+
+            <div class="training-footer-content">
+
+                <a href="index.html#home" class="training-logo">
+                    <span class="training-logo-main">
+                        TONEL<span>2</span>FAME
+                    </span>
+
+                    <span class="training-logo-subtitle">
+                        HAIR & BEAUTY STUDIO
+                    </span>
+                </a>
+
+                <p>
+                    Where Beauty Meets Excellence.
+                </p>
+
+                <div class="training-footer-links">
+
+                    <a href="index.html#home">Home</a>
+
+                    <a href="index.html#services">Services</a>
+
+                    <a href="gallery.html">Gallery</a>
+
+                    <a href="training.html">Training</a>
+
+                    <a href="index.html#contact">Contact</a>
+
+                </div>
+
+                <div class="training-footer-socials">
+
+                    <a href="https://wa.me/2349161711509"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+
+                    <a href="#"
+                        aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                </div>
+
+            </div>
 
 
-<!-- FOOTER -->
-<footer class="site-footer">
-    <div class="container">
-        <div class="footer-bottom">
+            <div class="training-footer-bottom">
 
-            <p>
-                &copy; <span id="currentYear"></span>
-                TONEL2FAME. ALL RIGHTS RESERVED.
-            </p>
+                <p>
+                    &copy; <span id="trainingYear"></span>
+                    Tonel2Fame. All Rights Reserved.
+                </p>
 
-            <a href="index.html#home">
-                BACK TO HOME <i class="fa-solid fa-arrow-up"></i>
-            </a>
+                <p>Designed With Excellence.</p>
+
+            </div>
 
         </div>
-    </div>
-</footer>
+
+    </footer>
 
 
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/2349161711509?text=Hello%20Tonel2Fame!"
-    class="floating-whatsapp"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Chat with Tonel2Fame on WhatsApp">
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/2349161711509?text=Hello%20Tonel2Fame%2C%20I%20want%20to%20know%20more%20about%20your%20hair%20training."
+        class="training-whatsapp"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with us on WhatsApp">
 
-    <i class="fa-brands fa-whatsapp"></i>
-    <span>Chat With Us</span>
+        <i class="fab fa-whatsapp"></i>
+        <span>Chat With Us</span>
 
-</a>
+    </a>
 
 
-<script src="script.js"></script>
+    <!-- TRAINING PAGE JAVASCRIPT -->
+    <script src="training.js"></script>
 
 </body>
 </html>

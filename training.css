@@ -1,914 +1,1261 @@
 
 /* =========================================
-   TONEL2FAME — TRAINING PAGE
-   LUXURY HAIR ACADEMY
+   TONEL2FAME — HAIR ACADEMY
+   LUXURY TRAINING PAGE STYLES
 ========================================= */
+
+:root {
+    --training-black: #171513;
+    --training-dark: #211e1a;
+    --training-gold: #C9A46A;
+    --training-gold-light: #E1C18B;
+    --training-cream: #F4EDDF;
+    --training-muted: #A89D8D;
+    --training-heading: "Playfair Display", serif;
+    --training-body: "DM Sans", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background: var(--training-black);
+    color: var(--training-cream);
+    font-family: var(--training-body);
+    overflow-x: hidden;
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font: inherit;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+.container {
+    width: min(1200px, 90%);
+    margin-inline: auto;
+}
+
+.section-padding {
+    padding: 110px 0;
+}
 
 
 /* =========================================
-   TRAINING HERO
+   PAGE LOADER
 ========================================= */
 
-.training-hero {
-    min-height: 88vh;
-    min-height: 88svh;
-    position: relative;
+.training-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: var(--training-black);
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    transition: opacity 0.7s ease, visibility 0.7s ease;
+}
 
+.training-loader.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.loader-content > span {
+    font-family: var(--training-heading);
+    font-size: 35px;
+    letter-spacing: 4px;
+}
+
+.loader-content > span span {
+    color: var(--training-gold);
+}
+
+.loader-content p {
+    color: var(--training-muted);
+    font-size: 10px;
+    letter-spacing: 5px;
+    margin-top: 12px;
+}
+
+.loader-line {
+    width: 160px;
+    height: 2px;
+    background: #39332c;
+    margin: 18px auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.loader-line::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--training-gold);
+    transform: translateX(-100%);
+    animation: loaderProgress 1.5s ease forwards;
+}
+
+@keyframes loaderProgress {
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.training-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(23, 21, 19, 0.92);
+    border-bottom: 1px solid rgba(201, 164, 106, 0.12);
+    backdrop-filter: blur(18px);
+    transition: background 0.3s ease;
+}
+
+.training-navbar {
+    min-height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.training-logo {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.training-logo-main {
+    font-family: var(--training-heading);
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.1;
+}
+
+.training-logo-main span {
+    color: var(--training-gold);
+}
+
+.training-logo-subtitle {
+    font-size: 8px;
+    letter-spacing: 3px;
+    color: var(--training-muted);
+    margin-top: 5px;
+}
+
+.training-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+}
+
+.training-nav-links a {
+    font-size: 12px;
+    color: #d2c8b9;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.training-nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--training-gold);
+    transition: width 0.3s ease;
+}
+
+.training-nav-links a:hover,
+.training-nav-links a.active {
+    color: var(--training-gold-light);
+}
+
+.training-nav-links a:hover::after,
+.training-nav-links a.active::after {
+    width: 100%;
+}
+
+.training-header-cta,
+.training-nav-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 22px;
+    background: var(--training-gold);
+    color: var(--training-black) !important;
+    font-size: 11px !important;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.training-header-cta:hover,
+.training-nav-cta:hover {
+    background: var(--training-gold-light);
+    transform: translateY(-2px);
+}
+
+.mobile-enrol,
+.training-menu-toggle {
+    display: none;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.training-hero {
+    min-height: 760px;
+    height: 100vh;
+    max-height: 950px;
+    position: relative;
+    display: flex;
+    align-items: center;
     background:
         linear-gradient(
             90deg,
-            rgba(23, 21, 19, 0.95),
-            rgba(23, 21, 19, 0.55)
+            rgba(17, 15, 13, 0.96) 0%,
+            rgba(17, 15, 13, 0.83) 45%,
+            rgba(17, 15, 13, 0.22) 100%
         ),
-        linear-gradient(
-            0deg,
-            rgba(23, 21, 19, 0.7),
-            transparent 60%
-        ),
-        url("Images/Main.png");
+        url("Images/Main.png") center/cover no-repeat;
+    overflow: hidden;
+}
 
-    background-size: cover;
-    background-position: center;
+.training-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        0deg,
+        var(--training-black),
+        transparent 35%
+    );
+    pointer-events: none;
 }
 
 .training-hero-overlay {
     position: absolute;
     inset: 0;
-
     background: radial-gradient(
-        circle at 75% 45%,
-        rgba(201, 164, 106, 0.14),
+        circle at 75% 40%,
+        rgba(201, 164, 106, 0.12),
         transparent 40%
     );
-
-    pointer-events: none;
 }
 
 .training-hero-content {
     position: relative;
     z-index: 2;
-
-    width: 90%;
-    max-width: 950px;
-    margin: auto;
-
-    padding: 160px 0 120px;
-    text-align: center;
+    padding-top: 90px;
 }
 
-.training-eyebrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-
-    margin-bottom: 30px;
-
-    color: var(--gold);
+.training-eyebrow,
+.section-eyebrow {
+    color: var(--training-gold);
     font-size: 10px;
     letter-spacing: 4px;
-}
-
-.training-eyebrow span {
-    width: 35px;
-    height: 1px;
-    background: var(--gold);
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 22px;
 }
 
 .training-hero h1 {
-    max-width: 850px;
-    margin: auto;
-
-    color: var(--cream);
-    font-family: var(--heading-font);
-    font-size: clamp(58px, 9vw, 105px);
+    font-family: var(--training-heading);
+    font-size: clamp(48px, 7vw, 88px);
     font-weight: 400;
     line-height: 1.08;
-    letter-spacing: -3px;
+    max-width: 750px;
+    margin-bottom: 25px;
 }
 
-.training-hero h1 em {
-    color: var(--gold);
+.training-hero h1 span,
+.training-intro-content h2 span,
+.training-section-heading h2 span,
+.training-benefits-heading h2 span,
+.training-enrol h2 span {
+    color: var(--training-gold);
+    font-style: italic;
 }
 
 .training-hero-content > p {
-    max-width: 550px;
-    margin: 28px auto 35px;
-
-    color: rgba(244, 237, 223, 0.75);
+    max-width: 510px;
+    color: #c4b9a9;
     font-size: 14px;
-    line-height: 1.9;
+    line-height: 2;
+    margin-bottom: 35px;
 }
 
-.training-hero-content .btn {
+.training-hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.training-btn {
+    min-height: 52px;
     display: inline-flex;
     align-items: center;
-    gap: 14px;
+    justify-content: center;
+    gap: 13px;
+    padding: 0 25px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.35s ease;
 }
 
-.training-hero-label {
-    position: absolute;
-    right: 5%;
-    bottom: 35px;
+.training-btn-primary {
+    background: var(--training-gold);
+    color: var(--training-black);
+}
 
-    color: rgba(244, 237, 223, 0.55);
+.training-btn-primary:hover {
+    background: var(--training-gold-light);
+    transform: translateY(-4px);
+}
+
+.training-btn-outline {
+    border: 1px solid rgba(244, 237, 223, 0.55);
+    color: var(--training-cream);
+}
+
+.training-btn-outline:hover {
+    border-color: var(--training-gold);
+    color: var(--training-gold);
+}
+
+.training-hero-note {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--training-muted);
     font-size: 9px;
     letter-spacing: 3px;
+    margin-top: 55px;
+}
+
+.training-hero-note span {
+    width: 30px;
+    height: 1px;
+    background: var(--training-gold);
+}
+
+.training-hero-bottom {
+    position: absolute;
+    z-index: 3;
+    bottom: 35px;
+    right: 5%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--training-gold);
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.training-hero-bottom i {
+    animation: scrollDown 1.5s infinite;
+}
+
+@keyframes scrollDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(7px);
+    }
 }
 
 
 /* =========================================
-   TRAINING INTRO
+   INTRODUCTION
 ========================================= */
 
 .training-intro {
-    padding: 110px 0 75px;
-    background: var(--black);
-    text-align: center;
+    background: var(--training-black);
 }
 
-.training-intro-content {
-    max-width: 750px;
-    margin: auto;
-}
-
-.training-intro .section-eyebrow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-
-    color: var(--gold);
-    font-size: 10px;
-    letter-spacing: 3px;
-}
-
-.training-intro h2 {
-    margin-top: 24px;
-
-    color: var(--cream);
-    font-family: var(--heading-font);
-    font-size: clamp(38px, 5vw, 62px);
-    font-weight: 400;
-    line-height: 1.2;
-}
-
-.training-intro h2 em {
-    color: var(--gold);
-}
-
-.training-intro p {
-    max-width: 600px;
-    margin: 22px auto 0;
-
-    color: rgba(244, 237, 223, 0.65);
-    font-size: 13px;
-    line-height: 1.9;
-}
-
-
-/* =========================================
-   TRAINING COURSES
-========================================= */
-
-.training-courses {
-    padding: 70px 0 120px;
-    background: var(--black);
-}
-
-.training-section-heading {
-    max-width: 650px;
-    margin: 0 auto 65px;
-    text-align: center;
-}
-
-.training-section-heading .section-eyebrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-
-    color: var(--gold);
-    font-size: 10px;
-    letter-spacing: 3px;
-}
-
-.training-section-heading h2 {
-    margin-top: 23px;
-
-    color: var(--cream);
-    font-family: var(--heading-font);
-    font-size: clamp(40px, 5vw, 62px);
-    font-weight: 400;
-    line-height: 1.2;
-}
-
-.training-section-heading h2 em {
-    color: var(--gold);
-}
-
-.training-section-heading > p {
-    margin-top: 18px;
-
-    color: rgba(244, 237, 223, 0.6);
-    font-size: 13px;
-    line-height: 1.8;
-}
-
-
-/* COURSE GRID */
-
-.training-course-grid {
+.training-intro-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
+    grid-template-columns: 1fr 0.9fr;
+    align-items: center;
+    gap: 100px;
 }
 
-
-/* COURSE CARD */
-
-.training-course-card {
+.training-intro-image {
     position: relative;
-    display: flex;
-    flex-direction: column;
-
-    min-height: 390px;
-    padding: 35px 30px;
-
-    overflow: hidden;
-
-    background: linear-gradient(
-        145deg,
-        #24201b,
-        #191714
-    );
-
-    border: 1px solid rgba(201, 164, 106, 0.16);
-
-    transition:
-        transform 0.45s ease,
-        border-color 0.45s ease,
-        box-shadow 0.45s ease;
+    padding: 0 25px 25px 0;
 }
 
-.training-course-card::before {
+.training-intro-image::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 0;
-    height: 2px;
-
-    background: var(--gold);
-    transition: width 0.5s ease;
+    top: 25px;
+    left: 25px;
+    right: 0;
+    bottom: 0;
+    border: 1px solid var(--training-gold);
+    z-index: 0;
 }
 
-.training-course-card:hover {
-    transform: translateY(-9px);
-    border-color: rgba(201, 164, 106, 0.65);
-
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+.training-intro-image img {
+    height: 520px;
+    position: relative;
+    z-index: 1;
+    filter: brightness(0.88);
 }
 
-.training-course-card:hover::before {
-    width: 100%;
-}
-
-
-/* COURSE NUMBER */
-
-.training-course-number {
+.training-image-caption {
     position: absolute;
-    top: 22px;
-    right: 25px;
-
-    color: rgba(201, 164, 106, 0.25);
-    font-family: var(--heading-font);
-    font-size: 35px;
-}
-
-
-/* COURSE ICON */
-
-.training-course-icon {
+    z-index: 2;
+    bottom: 45px;
+    left: 25px;
     display: flex;
     align-items: center;
-    justify-content: center;
-
-    width: 55px;
-    height: 55px;
-
-    margin-bottom: 28px;
-
-    border: 1px solid rgba(201, 164, 106, 0.4);
-    border-radius: 50%;
-
-    color: var(--gold);
-    font-size: 19px;
-
-    transition: all 0.4s ease;
+    gap: 15px;
+    background: rgba(23, 21, 19, 0.9);
+    padding: 15px 20px;
 }
 
-.training-course-card:hover .training-course-icon {
-    background: var(--gold);
-    color: var(--black);
-    transform: rotateY(180deg);
+.training-image-caption span {
+    color: var(--training-gold);
+    font-family: var(--training-heading);
+    font-size: 22px;
 }
 
+.training-image-caption p {
+    font-size: 10px;
+    letter-spacing: 1px;
+}
 
-/* COURSE TEXT */
-
-.training-course-card h3 {
-    margin-bottom: 14px;
-
-    color: var(--cream);
-    font-family: var(--heading-font);
-    font-size: 24px;
+.training-intro-content h2,
+.training-section-heading h2,
+.training-benefits-heading h2 {
+    font-family: var(--training-heading);
+    font-size: clamp(35px, 4vw, 53px);
     font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 25px;
 }
 
-.training-course-card > p {
-    min-height: 65px;
-
-    color: rgba(244, 237, 223, 0.62);
-    font-size: 12px;
-    line-height: 1.9;
+.training-intro-content > p,
+.training-benefits-heading > p {
+    color: var(--training-muted);
+    font-size: 13px;
+    line-height: 2;
+    margin-bottom: 18px;
 }
 
-
-/* COURSE PRICE */
-
-.training-course-bottom {
-    display: flex;
+.training-text-link {
+    display: inline-flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-
-    margin-top: auto;
-    padding-top: 25px;
-
-    border-top: 1px solid rgba(201, 164, 106, 0.2);
+    gap: 15px;
+    color: var(--training-gold);
+    font-size: 11px;
+    font-weight: 700;
+    margin-top: 18px;
+    letter-spacing: 1px;
 }
 
-.training-course-bottom span {
-    color: rgba(244, 237, 223, 0.5);
-    font-size: 9px;
-    letter-spacing: 1.5px;
-}
-
-.training-course-bottom strong {
-    color: var(--gold);
-    font-family: var(--heading-font);
-    font-size: 25px;
-    font-weight: 400;
-}
-
-
-/* ENROL LINK */
-
-.training-course-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    margin-top: 23px;
-
-    color: var(--cream);
-    font-size: 9px;
-    letter-spacing: 1.5px;
-
-    transition: color 0.3s ease;
-}
-
-.training-course-link i {
-    color: var(--gold);
+.training-text-link i {
     transition: transform 0.3s ease;
 }
 
-.training-course-link:hover {
-    color: var(--gold);
-}
-
-.training-course-link:hover i {
+.training-text-link:hover i {
     transform: translateX(6px);
 }
 
 
-/* FEATURED COURSE */
+/* =========================================
+   SECTION HEADINGS
+========================================= */
 
-.training-course-card.featured {
-    border-color: var(--gold);
-    background: linear-gradient(
-        145deg,
-        #30271d,
-        #1b1814
-    );
-}
-
-.training-popular {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    padding: 8px 14px;
-
-    background: var(--gold);
-    color: var(--black);
-
-    font-size: 8px;
-    letter-spacing: 1.5px;
-    font-weight: 700;
-}
-
-.training-course-card.featured .training-course-number {
-    top: 35px;
-}
-
-
-/* PRICE NOTE */
-
-.training-price-note {
-    margin-top: 28px;
-
-    color: rgba(244, 237, 223, 0.45);
-    font-size: 11px;
+.training-section-heading,
+.training-benefits-heading {
     text-align: center;
-    line-height: 1.7;
+    max-width: 650px;
+    margin: 0 auto 60px;
+}
+
+.training-section-heading h2,
+.training-benefits-heading h2 {
+    margin-bottom: 15px;
+}
+
+.training-section-heading > p {
+    color: var(--training-muted);
+    font-size: 13px;
+    line-height: 1.9;
 }
 
 
 /* =========================================
-   TRAINING BENEFITS
+   TRAINING PROGRAMMES
+========================================= */
+
+.training-programmes {
+    background: #1d1a17;
+}
+
+.training-programme-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+}
+
+.training-card {
+    background: #25211d;
+    overflow: hidden;
+    border: 1px solid rgba(201, 164, 106, 0.12);
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.training-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(201, 164, 106, 0.55);
+}
+
+.training-card-image {
+    height: 310px;
+    position: relative;
+    overflow: hidden;
+}
+
+.training-card-image img {
+    height: 100%;
+    transition: transform 0.8s ease;
+}
+
+.training-card:hover .training-card-image img {
+    transform: scale(1.08);
+}
+
+.training-card-number {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 42px;
+    height: 42px;
+    background: var(--training-gold);
+    color: var(--training-black);
+    display: grid;
+    place-items: center;
+    font-family: var(--training-heading);
+    font-size: 17px;
+}
+
+.training-card-content {
+    padding: 30px;
+}
+
+.training-card-category {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--training-gold);
+}
+
+.training-card-content h3 {
+    font-family: var(--training-heading);
+    font-size: 27px;
+    font-weight: 400;
+    margin: 12px 0;
+}
+
+.training-card-content p {
+    color: var(--training-muted);
+    font-size: 12px;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+.training-card-content a {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--training-gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.training-card-content a i {
+    transition: transform 0.3s ease;
+}
+
+.training-card-content a:hover i {
+    transform: translateX(6px);
+}
+
+
+/* =========================================
+   BENEFITS
 ========================================= */
 
 .training-benefits {
-    padding: 120px 0;
-    background: var(--black-light);
+    background: var(--training-black);
 }
 
 .training-benefits-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 85px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
 }
 
-
-/* BENEFITS IMAGE */
-
-.training-benefits-image {
-    position: relative;
-    min-height: 540px;
+.training-benefit {
+    padding: 35px 25px;
+    border: 1px solid rgba(201, 164, 106, 0.18);
+    background: #1d1a17;
+    transition: all 0.4s ease;
 }
 
-.training-benefits-image::before {
-    content: "";
-    position: absolute;
-    top: -17px;
-    left: -17px;
-
-    width: 100%;
-    height: 100%;
-
-    border: 1px solid var(--gold);
-    z-index: 0;
+.training-benefit:hover {
+    transform: translateY(-8px);
+    border-color: var(--training-gold);
 }
 
-.training-benefits-image img {
-    position: relative;
-    z-index: 1;
-
-    display: block;
-    width: 100%;
-    height: 540px;
-
-    object-fit: cover;
+.benefit-icon {
+    width: 55px;
+    height: 55px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--training-gold);
+    color: var(--training-gold);
+    font-size: 20px;
+    margin-bottom: 25px;
 }
 
-
-/* BENEFITS CONTENT */
-
-.training-benefits-content .section-eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    color: var(--gold);
-    font-size: 10px;
-    letter-spacing: 2px;
-}
-
-.training-benefits-content h2 {
-    margin: 25px 0 20px;
-
-    color: var(--cream);
-    font-family: var(--heading-font);
-    font-size: clamp(40px, 5vw, 58px);
+.training-benefit h3 {
+    font-family: var(--training-heading);
+    font-size: 20px;
     font-weight: 400;
-    line-height: 1.2;
+    margin-bottom: 15px;
 }
 
-.training-benefits-content h2 em {
-    color: var(--gold);
-}
-
-.training-benefits-content > p {
-    margin-bottom: 35px;
-
-    color: rgba(244, 237, 223, 0.65);
-    font-size: 13px;
+.training-benefit p {
+    color: var(--training-muted);
+    font-size: 11px;
     line-height: 1.9;
 }
 
 
-/* BENEFIT ITEMS */
+/* =========================================
+   TRAINING PROCESS
+========================================= */
 
-.training-benefit {
-    display: flex;
-    align-items: flex-start;
-    gap: 18px;
-
-    margin-top: 25px;
+.training-process {
+    background: #211e1a;
 }
 
-.training-benefit > i {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    flex-shrink: 0;
-
-    width: 30px;
-    height: 30px;
-
-    border: 1px solid rgba(201, 164, 106, 0.5);
-    border-radius: 50%;
-
-    color: var(--gold);
-    font-size: 11px;
+.training-process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
 }
 
-.training-benefit h4 {
-    margin-bottom: 7px;
+.process-step {
+    position: relative;
+    padding: 35px 25px;
+    border-top: 1px solid rgba(201, 164, 106, 0.5);
+}
 
-    color: var(--cream);
-    font-family: var(--heading-font);
-    font-size: 19px;
+.process-number {
+    display: block;
+    color: var(--training-gold);
+    font-family: var(--training-heading);
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.process-step > i {
+    font-size: 23px;
+    color: var(--training-gold-light);
+    margin-bottom: 20px;
+}
+
+.process-step h3 {
+    font-family: var(--training-heading);
+    font-size: 21px;
     font-weight: 400;
+    margin-bottom: 15px;
 }
 
-.training-benefit p {
-    color: rgba(244, 237, 223, 0.55);
+.process-step p {
+    color: var(--training-muted);
     font-size: 11px;
-    line-height: 1.7;
+    line-height: 1.9;
 }
 
 
 /* =========================================
-   TRAINING CONTACT CTA
+   TRAINING GALLERY
 ========================================= */
 
-.training-contact {
-    position: relative;
-    overflow: hidden;
+.training-gallery {
+    background: var(--training-black);
+}
 
-    padding: 125px 0;
+.training-gallery-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 0.8fr;
+    gap: 18px;
+    align-items: center;
+}
 
+.training-gallery-grid img {
+    height: 350px;
+    filter: brightness(0.85);
+    transition: all 0.6s ease;
+}
+
+.training-gallery-grid img:hover {
+    filter: brightness(1);
+    transform: translateY(-8px);
+}
+
+
+/* =========================================
+   ENROLMENT CTA
+========================================= */
+
+.training-enrol {
     background:
-        radial-gradient(
-            circle at 50% 100%,
-            rgba(201, 164, 106, 0.13),
-            transparent 50%
+        linear-gradient(
+            rgba(20, 18, 15, 0.88),
+            rgba(20, 18, 15, 0.93)
         ),
-        var(--black);
-
+        url("images/training-8.jpg") center/cover fixed no-repeat;
     text-align: center;
 }
 
-.training-contact-content {
+.training-enrol-content {
     max-width: 760px;
     margin: auto;
 }
 
-.training-contact .section-eyebrow {
-    color: var(--gold);
-    font-size: 10px;
-    letter-spacing: 3px;
-}
-
-.training-contact h2 {
-    margin-top: 25px;
-
-    color: var(--cream);
-    font-family: var(--heading-font);
-    font-size: clamp(40px, 5vw, 65px);
+.training-enrol h2 {
+    font-family: var(--training-heading);
+    font-size: clamp(38px, 5vw, 62px);
     font-weight: 400;
     line-height: 1.2;
+    margin-bottom: 25px;
 }
 
-.training-contact h2 em {
-    color: var(--gold);
-}
-
-.training-contact p {
-    max-width: 520px;
-    margin: 22px auto 35px;
-
-    color: rgba(244, 237, 223, 0.65);
+.training-enrol p {
+    max-width: 570px;
+    margin: 0 auto 30px;
+    color: #c4b9a9;
     font-size: 13px;
-    line-height: 1.9;
-}
-
-.training-contact .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 13px;
+    line-height: 2;
 }
 
 
 /* =========================================
-   TRAINING PAGE SCROLL ANIMATIONS
+   FOOTER
 ========================================= */
 
-.training-hero .reveal,
-.training-intro .reveal,
-.training-section-heading.reveal,
-.training-course-card.reveal,
-.training-benefits .reveal-left,
-.training-benefits .reveal-right,
-.training-contact .reveal {
+.training-footer {
+    background: #100f0d;
+    padding: 65px 0 25px;
+}
+
+.training-footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 25px;
+}
+
+.training-footer-content > p {
+    color: var(--training-muted);
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.training-footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.training-footer-links a {
+    color: #c5bbaa;
+    font-size: 11px;
+    transition: color 0.3s ease;
+}
+
+.training-footer-links a:hover {
+    color: var(--training-gold);
+}
+
+.training-footer-socials {
+    display: flex;
+    gap: 15px;
+}
+
+.training-footer-socials a {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(201, 164, 106, 0.4);
+    color: var(--training-gold);
+    transition: all 0.3s ease;
+}
+
+.training-footer-socials a:hover {
+    background: var(--training-gold);
+    color: var(--training-black);
+}
+
+.training-footer-bottom {
+    border-top: 1px solid rgba(201, 164, 106, 0.15);
+    margin-top: 50px;
+    padding-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    color: #81786d;
+    font-size: 10px;
+}
+
+
+/* =========================================
+   FLOATING WHATSAPP
+========================================= */
+
+.training-whatsapp {
+    position: fixed;
+    right: 28px;
+    bottom: 28px;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px 20px;
+    border: 1px solid var(--training-gold);
+    border-radius: 50px;
+
+    background: var(--training-black);
+    color: var(--cream);
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .25);
+
+    transition: all .35s ease;
+}
+
+.training-whatsapp i{
+    color: #25D366;
+    font-size: 23px;
+}
+
+.training-whatsapp span {
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.training-whatsapp:hover {
+    transform: translateY(-6px);
+    background: var(--training-gold);
+    color: var(--training-black);
+}
+
+
+/* =========================================
+   SCROLL REVEAL ANIMATIONS
+========================================= */
+
+.reveal {
     opacity: 0;
     transform: translateY(45px);
-
     transition:
-        opacity 0.9s ease,
-        transform 0.9s cubic-bezier(0.2, 0.7, 0.3, 1);
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
-.training-benefits .reveal-left {
-    transform: translateX(-45px);
-}
-
-.training-benefits .reveal-right {
-    transform: translateX(45px);
-}
-
-.training-hero .reveal.revealed,
-.training-intro .reveal.revealed,
-.training-section-heading.reveal.revealed,
-.training-course-card.reveal.revealed,
-.training-benefits .reveal-left.revealed,
-.training-benefits .reveal-right.revealed,
-.training-contact .reveal.revealed {
+.reveal.revealed {
     opacity: 1;
-    transform: translate(0, 0);
+    transform: translateY(0);
 }
 
-
-/* STAGGERED COURSE CARDS */
-
-.training-course-card:nth-child(2) {
-    transition-delay: 0.1s;
+.training-card:nth-child(2),
+.training-benefit:nth-child(2),
+.process-step:nth-child(2) {
+    transition-delay: 0.12s;
 }
 
-.training-course-card:nth-child(3) {
-    transition-delay: 0.2s;
+.training-card:nth-child(3),
+.training-benefit:nth-child(3),
+.process-step:nth-child(3) {
+    transition-delay: 0.24s;
 }
 
-.training-course-card:nth-child(4) {
-    transition-delay: 0.1s;
-}
-
-.training-course-card:nth-child(5) {
-    transition-delay: 0.2s;
-}
-
-.training-course-card:nth-child(6) {
-    transition-delay: 0.3s;
+.training-card:nth-child(4),
+.training-benefit:nth-child(4),
+.process-step:nth-child(4) {
+    transition-delay: 0.36s;
 }
 
 
 /* =========================================
-   RESPONSIVE DESIGN
+   RESPONSIVE — TABLETS
 ========================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 1050px) {
 
-    .training-course-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    .training-navbar {
+        gap: 20px;
     }
 
-    .training-benefits-grid {
+    .training-nav-links {
+        gap: 17px;
+    }
+
+    .training-nav-links a {
+        font-size: 11px;
+    }
+
+    .training-intro-grid {
         gap: 55px;
     }
 
-    .training-benefits-image,
-    .training-benefits-image img {
-        min-height: 470px;
-        height: 470px;
+    .training-benefits-grid,
+    .training-process-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
+
 }
 
 
-@media (max-width: 768px) {
+/* =========================================
+   RESPONSIVE — MOBILE NAVIGATION
+========================================= */
+
+@media (max-width: 850px) {
+
+    .training-navbar {
+        min-height: 75px;
+    }
+
+    .training-header-cta {
+        display: none;
+    }
+
+    .training-menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 7px;
+        width: 45px;
+        height: 45px;
+        background: transparent;
+        border: 1px solid rgba(201, 164, 106, 0.45);
+        cursor: pointer;
+        z-index: 1002;
+        padding: 11px;
+    }
+
+    .training-menu-toggle span {
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: var(--training-gold);
+        transition: all 0.3s ease;
+    }
+
+    .training-menu-toggle.active span:first-child {
+        transform: translateY(4px) rotate(45deg);
+    }
+
+    .training-menu-toggle.active span:last-child {
+        transform: translateY(-4px) rotate(-45deg);
+    }
+
+    .training-nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: min(380px, 85%);
+        height: 100vh;
+        height: 100dvh;
+        background: #171513;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 32px;
+        padding: 100px 45px;
+        z-index: 1001;
+        transition: right 0.45s ease;
+        box-shadow: -15px 0 50px rgba(0, 0, 0, 0.35);
+    }
+
+    .training-nav-links.active {
+        right: 0;
+    }
+
+    .training-nav-links a {
+        font-family: var(--training-heading);
+        font-size: 23px;
+        color: var(--training-cream);
+    }
+
+    .training-nav-links a::after {
+        bottom: -5px;
+    }
+
+    .mobile-enrol {
+        display: block;
+    }
+
+    .training-nav-links .training-nav-cta {
+        font-family: var(--training-body);
+        font-size: 11px !important;
+        padding: 15px 25px;
+        margin-top: 10px;
+    }
 
     .training-hero {
-        min-height: 78svh;
+        min-height: 700px;
         background-position: 60% center;
     }
 
-    .training-hero-content {
-        padding: 145px 0 100px;
-    }
-
-    .training-hero h1 {
-        font-size: clamp(52px, 10vw, 76px);
-        letter-spacing: -2px;
-    }
-
-    .training-hero-content > p {
-        font-size: 13px;
-    }
-
-    .training-intro {
-        padding: 90px 0 55px;
-    }
-
-    .training-courses {
-        padding: 50px 0 90px;
-    }
-
-    .training-section-heading {
-        margin-bottom: 45px;
-    }
-
-    .training-course-card {
-        min-height: 375px;
-        padding: 30px 23px;
-    }
-
-    .training-benefits {
-        padding: 90px 0;
-    }
-
-    .training-benefits-grid {
+    .training-intro-grid {
         grid-template-columns: 1fr;
         gap: 55px;
     }
 
-    .training-benefits-image,
-    .training-benefits-image img {
-        height: 480px;
-        min-height: 480px;
+    .training-intro-image {
+        max-width: 600px;
     }
 
-    .training-contact {
-        padding: 95px 0;
-    }
-}
-
-
-@media (max-width: 520px) {
-
-    .training-hero {
-        min-height: 75svh;
+    .training-intro-image img {
+        height: 450px;
     }
 
-    .training-hero-content {
-        width: 88%;
-        padding: 135px 0 95px;
-    }
-
-    .training-eyebrow {
-        gap: 9px;
-        font-size: 8px;
-        letter-spacing: 2px;
-    }
-
-    .training-eyebrow span {
-        width: 20px;
-    }
-
-    .training-hero h1 {
-        font-size: clamp(45px, 12vw, 61px);
-        line-height: 1.15;
-    }
-
-    .training-hero-content > p {
-        font-size: 12px;
-        margin-top: 20px;
-    }
-
-    .training-hero-label {
-        bottom: 22px;
-        font-size: 8px;
-    }
-
-    .training-intro {
-        padding: 75px 0 40px;
-    }
-
-    .training-intro h2 {
-        font-size: 39px;
-    }
-
-    .training-intro p {
-        font-size: 12px;
-    }
-
-    .training-courses {
-        padding: 40px 0 75px;
-    }
-
-    .training-section-heading h2 {
-        font-size: 39px;
-    }
-
-    .training-section-heading > p {
-        font-size: 12px;
-    }
-
-    .training-course-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
-
-    .training-course-card {
-        min-height: 350px;
-        padding: 30px 25px;
-    }
-
-    .training-course-card h3 {
-        font-size: 25px;
-    }
-
-    .training-course-bottom strong {
-        font-size: 27px;
-    }
-
-    .training-benefits {
-        padding: 75px 0;
-    }
-
-    .training-benefits-grid {
-        gap: 45px;
-    }
-
-    .training-benefits-image,
-    .training-benefits-image img {
-        height: 360px;
-        min-height: 360px;
-    }
-
-    .training-benefits-image::before {
-        top: -10px;
-        left: -10px;
-    }
-
-    .training-benefits-content h2 {
-        font-size: 40px;
-    }
-
-    .training-contact {
-        padding: 80px 0;
-    }
-
-    .training-contact h2 {
-        font-size: 40px;
-    }
-
-    .training-contact p {
-        font-size: 12px;
-    }
 }
 
 
 /* =========================================
-   ACCESSIBILITY
+   RESPONSIVE — SMALL MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .section-padding {
+        padding: 75px 0;
+    }
+
+    .container {
+        width: 88%;
+    }
+
+    .training-logo-main {
+        font-size: 22px;
+    }
+
+    .training-hero {
+        min-height: 690px;
+        height: auto;
+        max-height: none;
+        background-position: 58% center;
+    }
+
+    .training-hero-content {
+        padding-top: 120px;
+        padding-bottom: 100px;
+    }
+
+    .training-hero h1 {
+        font-size: clamp(43px, 12vw, 62px);
+    }
+
+    .training-hero-content > p {
+        font-size: 12px;
+    }
+
+    .training-hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .training-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .training-hero-note {
+        margin-top: 35px;
+    }
+
+    .training-hero-bottom {
+        bottom: 20px;
+        font-size: 8px;
+    }
+
+    .training-intro-image img {
+        height: 350px;
+    }
+
+    .training-intro-content h2,
+    .training-section-heading h2,
+    .training-benefits-heading h2 {
+        font-size: 37px;
+    }
+
+    .training-programme-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .training-card-image {
+        height: 260px;
+    }
+
+    .training-card-content {
+        padding: 25px;
+    }
+
+    .training-benefits-grid,
+    .training-process-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .training-benefit {
+        padding: 28px;
+    }
+
+    .process-step {
+        padding: 25px 20px;
+    }
+
+    .training-gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .training-gallery-grid img {
+        height: 300px;
+    }
+
+    .training-enrol {
+        background-attachment: scroll;
+    }
+
+    .training-enrol h2 {
+        font-size: 39px;
+    }
+
+    .training-footer-links {
+        gap: 18px;
+    }
+
+    .training-footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        line-height: 1.8;
+    }
+
+    .training-whatsapp {
+        right: 17px;
+        bottom: 18px;
+        padding: 13px 16px;
+    }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
-    .training-hero .reveal,
-    .training-intro .reveal,
-    .training-section-heading.reveal,
-    .training-course-card.reveal,
-    .training-benefits .reveal-left,
-    .training-benefits .reveal-right,
-    .training-contact .reveal {
-        opacity: 1;
-        transform: none;
-        transition: none;
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 
-    .training-course-card,
-    .training-course-icon,
-    .training-course-link i {
-        transition: none;
+    .reveal {
+        opacity: 1;
+        transform: none;
     }
+
+}
+
+
+/* =========================================
+   TRAINING PROGRAMME PRICES
+========================================= */
+
+.training-card-price {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 18px 0;
+    margin-bottom: 18px;
+    border-top: 1px solid rgba(201, 164, 106, 0.2);
+    border-bottom: 1px solid rgba(201, 164, 106, 0.2);
+}
+
+.training-card-price span {
+    color: var(--training-muted);
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.training-card-price strong {
+    color: var(--training-gold);
+    font-family: var(--training-heading);
+    font-size: 29px;
+    font-weight: 500;
 }

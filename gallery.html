@@ -3,74 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore the Tonel2Fame hair gallery featuring luxury frontal installations, crochet hairstyles, wig revamping and custom wig creations.">
+    <meta name="description" content="Explore the luxury hair transformations, frontal installations, crochet styles and wig creations of Tonel2Fame.">
     <meta name="theme-color" content="#171513">
-    <title>Our Gallery | Tonel2Fame Hair & Beauty Studio</title>
-    <!-- GOOGLE FONTS -->
+    <title>Our Gallery | Tonel2Fame</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-    <!-- FONT AWESOME -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!-- WEBSITE CSS -->
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="gallery.css">
 </head>
+
 <body>
+
+    <!-- PAGE LOADER -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-logo">TONEL<span>2</span>FAME</div>
+        <div class="loader-line"><span></span></div>
+    </div>
+
     <!-- HEADER -->
-    <header class="header" id="header">
+    <header class="gallery-header">
 
-        <nav class="navbar container">
+        <nav class="gallery-navbar">
 
-            <a href="index.html#home" class="logo">
-                <span class="logo-main">
-                    TONEL<span class="logo-number">2</span>FAME
-                </span>
-
-                <span class="logo-subtitle">
-                    HAIR & BEAUTY STUDIO
-                </span>
+            <a href="index.html" class="gallery-logo">
+                <span>TONEL<span class="logo-two">2</span>FAME</span>
+                <small>HAIR & BEAUTY STUDIO</small>
             </a>
 
-            <ul class="nav-links" id="navLinks">
+            <ul class="gallery-nav-links" id="galleryNav">
 
-                <li><a href="index.html#home" class="nav-link">Home</a></li>
-
-                <li><a href="index.html#about" class="nav-link">About</a></li>
-
-                <li><a href="index.html#services" class="nav-link">Services</a></li>
-
-                <li><a href="Gallery.html" class="nav-link active">Gallery</a></li>
-
-                <li><a href="index.html#products" class="nav-link">Products</a></li>
-
-                <li><a href="training.html" class="nav-link">Training</a></li>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="index.html#academy">Training</a></li>
 
                 <li class="mobile-booking">
-                    <a href="index.html#contact" class="mobile-book-btn">
-                        BOOK APPOINTMENT
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
+                    <a href="index.html#contact">BOOK APPOINTMENT <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </li>
 
             </ul>
 
-            <a href="index.html#contact" class="nav-booking">
-                BOOK APPOINTMENT
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <a href="index.html#contact" class="header-booking">
+                BOOK APPOINTMENT <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
 
-            <button
-                class="menu-toggle"
-                id="menuToggle"
+            <button class="gallery-menu-toggle" id="galleryMenuToggle"
                 aria-label="Open navigation menu"
                 aria-expanded="false"
-                aria-controls="navLinks">
-
+                aria-controls="galleryNav">
                 <span></span>
                 <span></span>
-                <span></span>
-
             </button>
 
         </nav>
@@ -78,261 +63,195 @@
     </header>
 
 
-    <!-- GALLERY HERO -->
     <main>
 
-        <section class="portfolio-hero">
+        <!-- HERO -->
+        <section class="gallery-hero">
 
-            <div class="portfolio-hero-overlay"></div>
+            <div class="hero-image"></div>
+            <div class="hero-shade"></div>
 
-            <div class="portfolio-hero-content">
+            <div class="hero-content">
 
-                <span class="portfolio-eyebrow reveal">
+                <div class="hero-eyebrow animate-up">
                     <span></span>
-                    THE TONEL2FAME EXPERIENCE
+                    THE ART OF BEAUTY
                     <span></span>
-                </span>
+                </div>
 
-                <h1 class="reveal">
-                    Beauty In Every
-                    <em>Detail.</em>
+                <h1 class="animate-up">
+                    Beauty Beyond
+                    <em>Imagination.</em>
                 </h1>
 
-                <p class="reveal">
-                    A collection of beautiful transformations,
-                    flawless installations and hairstyles created
-                    with passion and precision.
+                <p class="animate-up">
+                    A showcase of creativity, elegance and beautiful
+                    transformations crafted with passion.
                 </p>
 
-                <a href="#portfolio" class="portfolio-scroll reveal">
-                    EXPLORE OUR WORK
+                <a href="#collection" class="hero-link animate-up">
+                    EXPLORE OUR COLLECTION
                     <i class="fa-solid fa-arrow-down"></i>
                 </a>
 
             </div>
 
-            <div class="portfolio-hero-number">
-                01 / PORTFOLIO
+            <div class="hero-index">01 / 04</div>
+
+            <div class="hero-vertical-text">
+                TONEL2FAME — HAIR & BEAUTY
             </div>
 
         </section>
 
 
-        <!-- GALLERY INTRO -->
-        <section class="portfolio-intro" id="portfolio">
+        <!-- INTRO -->
+        <section class="gallery-intro" id="collection">
 
-            <div class="container">
+            <div class="intro-container">
 
-                <div class="portfolio-intro-content reveal">
-
-                    <span class="section-eyebrow">
-                        <span></span>
-                        OUR COLLECTION
-                    </span>
-
-                    <h2>
-                        Every Style Tells
-                        <em>A Story.</em>
-                    </h2>
-
-                    <p>
-                        From elegant frontal installations to beautifully
-                        restored wigs, discover the artistry behind every
-                        Tonel2Fame transformation.
-                    </p>
-
+                <div class="section-label reveal">
+                    <span></span>
+                    OUR PORTFOLIO
                 </div>
+
+                <h2 class="reveal">
+                    Crafted With Passion.
+                    <em>Styled To Perfection.</em>
+                </h2>
+
+                <p class="reveal">
+                    Every hairstyle is an expression of beauty and
+                    individuality. Explore some of the work that
+                    makes Tonel2Fame special.
+                </p>
 
             </div>
 
         </section>
 
 
-        <!-- GALLERY -->
-        <section class="portfolio-gallery">
+        <!-- FILTERS -->
+        <section class="gallery-section">
 
-            <div class="container">
+            <div class="gallery-container">
 
-                <!-- FILTER BUTTONS -->
-                <div class="portfolio-filters reveal">
+                <div class="gallery-toolbar reveal">
 
-                    <button class="filter-btn active" data-filter="all">
-                        All Styles
-                    </button>
+                    <div class="gallery-count">
+                        <span>OUR WORK</span>
+                        <small>— A COLLECTION OF BEAUTY</small>
+                    </div>
 
-                    <button class="filter-btn" data-filter="frontal">
-                        Frontal
-                    </button>
-
-                    <button class="filter-btn" data-filter="crochet">
-                        Crochet
-                    </button>
-
-                    <button class="filter-btn" data-filter="revamp">
-                        Revamping
-                    </button>
-
-                    <button class="filter-btn" data-filter="wig">
-                        Wigs
-                    </button>
+                    <div class="gallery-filters">
+                        <button class="gallery-filter active" data-filter="all">All</button>
+                        <button class="gallery-filter" data-filter="frontal">Frontal</button>
+                        <button class="gallery-filter" data-filter="crochet">Crochet</button>
+                        <button class="gallery-filter" data-filter="revamp">Revamping</button>
+                        <button class="gallery-filter" data-filter="wig">Wigs</button>
+                    </div>
 
                 </div>
 
 
-                <!-- IMAGE GRID -->
-                <div class="portfolio-grid">
-
-                    <article class="gallery-item reveal" data-category="frontal">
-
-                        <img src="Images/frontal p2.png"
-                            alt="Professional frontal hair installation"
-                            loading="lazy">
-
-                        <div class="gallery-item-overlay">
-                            <span>Flawless Frontal</span>
-
-                            <button class="gallery-view" aria-label="View Flawless Frontal">
+                <!-- GALLERY GRID -->
+                <div class="gallery-grid" id="galleryGrid">
+                    <article class="gallery-card reveal" data-category="frontal">
+                        <div class="gallery-image">
+                            <img src="Images/Frontal2.png" alt="Luxury frontal installation" loading="lazy">
+                            <button class="image-open" aria-label="View frontal hairstyle">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             </button>
                         </div>
-
+                        <div class="gallery-caption">
+                            <span>01 / FRONTAL</span>
+                            <h3>Flawless Installation</h3>
+                        </div>
                     </article>
-
-
-                    <article class="gallery-item reveal" data-category="crochet">
-
-                        <img src="Images/Crotchet.png"
-                            alt="Beautiful crochet hairstyle"
-                            loading="lazy">
-
-                        <div class="gallery-item-overlay">
-                            <span>Elegant Crochet</span>
-
-                            <button class="gallery-view" aria-label="View Elegant Crochet">
+                    <article class="gallery-card gallery-card-tall reveal" data-category="crochet">
+                        <div class="gallery-image">
+                            <img src="Images/Crotchet.png" alt="Beautiful crochet hairstyle" loading="lazy">
+                            <button class="image-open" aria-label="View crochet hairstyle">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             </button>
                         </div>
-
+                        <div class="gallery-caption">
+                            <span>02 / CROCHET</span>
+                            <h3>Elegant Crochet</h3>
+                        </div>
                     </article>
-
-
-                    <article class="gallery-item reveal" data-category="revamp">
-
-                        <img src="Images/hair revamping.jpg"
-                            alt="Luxury wig revamping transformation"
-                            loading="lazy">
-
-                        <div class="gallery-item-overlay">
-                            <span>Wig Transformation</span>
-
-                            <button class="gallery-view" aria-label="View Wig Transformation">
+                    <article class="gallery-card reveal" data-category="revamp">
+                        <div class="gallery-image">
+                            <img src="Images/Revamp.png" alt="Professional wig revamping" loading="lazy">
+                            <button class="image-open" aria-label="View wig revamping">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             </button>
                         </div>
-
+                        <div class="gallery-caption">
+                            <span>03 / REVAMPING</span>
+                            <h3>A Beautiful Revival</h3>
+                        </div>
                     </article>
-
-                    <article class="gallery-item reveal" data-category="wig">
-
-                        <img src="Images/Skull cap.png"
-                            alt="Luxury Skull Cap"
-                            loading="lazy">
-
-                        <div class="gallery-item-overlay">
-                            <span>Skull Cap</span>
-
-                            <button class="gallery-view" aria-label="View Luxury Wig">
+                    <article class="gallery-card reveal" data-category="wig">
+                        <div class="gallery-image">
+                            <img src="Images/Wig cap1.png" alt="Luxury custom wig" loading="lazy">
+                            <button class="image-open" aria-label="View luxury wig">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             </button>
                         </div>
-
+                        <div class="gallery-caption">
+                            <span>04 / WIG MAKING</span>
+                            <h3>Luxury Creation</h3>
+                        </div>
                     </article>
-
-
-                    <article class="gallery-item reveal" data-category="wig">
-
-                        <img src="Images/Wig.png"
-                            alt="Luxury custom wig styling"
-                            loading="lazy">
-
-                        <div class="gallery-item-overlay">
-                            <span>Luxury Wig</span>
-
-                            <button class="gallery-view" aria-label="View Luxury Wig">
+                    <article class="gallery-card reveal" data-category="frontal">
+                        <div class="gallery-image">
+                            <img src="Images/frontal p2.png" alt="Signature frontal styling" loading="lazy">
+                            <button class="image-open" aria-label="View signature frontal">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             </button>
                         </div>
-
+                        <div class="gallery-caption">
+                            <span>05 / FRONTAL</span>
+                            <h3>Signature Beauty</h3>
+                        </div>
                     </article>
-
-                    <article class="gallery-item reveal" data-category="wig">
-
-                        <img src="Images/skullcap.png"
-                            alt="Luxury Skull Cap"
-                            loading="lazy">
-
-                        <div class="gallery-item-overlay">
-                            <span>Skull Cap</span>
-
-                            <button class="gallery-view" aria-label="View Luxury Wig">
+                    <article class="gallery-card reveal" data-category="crochet">
+                        <div class="gallery-image">
+                            <img src="Images/skullcap.png" alt="Professional crochet styling" loading="lazy">
+                            <button class="image-open" aria-label="View crochet styling">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             </button>
                         </div>
-
-                    </article>
-
-                    <article class="gallery-item reveal" data-category="revamp">
-
-                        <img src="Images/Revamp.png"
-                            alt="Luxury wig revamping transformation"
-                            loading="lazy">
-
-                        <div class="gallery-item-overlay">
-                            <span>Wig Transformation</span>
-
-                            <button class="gallery-view" aria-label="View Wig Transformation">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            </button>
+                        <div class="gallery-caption">
+                            <span>06 / SKULLCAP</span>
+                            <h3>Effortless Elegance</h3>
                         </div>
-
                     </article>
-
-
-
-                    <article class="gallery-item reveal" data-category="frontal">
-
-                        <img src="Images/Frontal2.png"
-                            alt="Beautiful frontal hairstyle"
-                            loading="lazy">
-
-                        <div class="gallery-item-overlay">
-                            <span>Signature Installation</span>
-
-                            <button class="gallery-view" aria-label="View Signature Installation">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            </button>
-                        </div>
-
-                    </article>
-
-
-                    <article class="gallery-item reveal" data-category="crochet">
-
-                        <img src="Images/Crotching.png"
-                            alt="Professional crochet hairstyle"
-                            loading="lazy">
-
-                        <div class="gallery-item-overlay">
-                            <span>Beautiful Crochet</span>
-
-                            <button class="gallery-view" aria-label="View Beautiful Crochet">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            </button>
-                        </div>
-
-                    </article>
-
                 </div>
+
+                <p class="gallery-note reveal">
+                    More beautiful transformations coming soon.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- BRAND STATEMENT -->
+        <section class="gallery-statement">
+            <div class="statement-content reveal">
+                <span>THE TONEL2FAME STANDARD</span>
+                <h2>
+                    Your Beauty.
+                    <em>Our Craft.</em>
+                </h2>
+
+                <p>
+                    We believe that the right hairstyle does more
+                    than change your appearance. It changes how
+                    you feel about yourself.
+                </p>
 
             </div>
 
@@ -340,32 +259,27 @@
 
 
         <!-- BOOKING CTA -->
-        <section class="portfolio-cta">
-
-            <div class="container">
-
-                <div class="portfolio-cta-content reveal">
-
-                    <span class="section-eyebrow">
-                        YOUR BEAUTY JOURNEY STARTS HERE
-                    </span>
-
-                    <h2>
-                        Ready For Your
-                        <em>Transformation?</em>
-                    </h2>
-
-                    <p>
-                        Let us create a look that makes you feel
-                        confident, beautiful and unforgettable.
-                    </p>
-
-                    <a href="index.html#contact" class="btn btn-primary">
-                        BOOK YOUR APPOINTMENT
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
-
+        <section class="gallery-cta">
+            <div class="cta-content reveal">
+                <div class="section-label">
+                    <span></span>
+                    LET'S CREATE SOMETHING BEAUTIFUL
                 </div>
+
+                <h2>
+                    Your Next Look
+                    <em>Starts Here.</em>
+                </h2>
+
+                <p>
+                    Ready for a beautiful transformation?
+                    Let Tonel2Fame bring your vision to life.
+                </p>
+
+                <a href="index.html#contact" class="cta-button">
+                    BOOK YOUR APPOINTMENT
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
 
             </div>
 
@@ -375,48 +289,40 @@
 
 
     <!-- FOOTER -->
-    <footer class="site-footer">
+    <footer class="gallery-footer">
 
-        <div class="container">
+        <a href="index.html" class="gallery-logo">
+            <span>TONEL<span class="logo-two">2</span>FAME</span>
+            <small>HAIR & BEAUTY STUDIO</small>
+        </a>
 
-            <div class="footer-bottom">
+        <p>WHERE BEAUTY MEETS EXCELLENCE.</p>
 
-                <p>
-                    &copy; <span id="currentYear"></span>
-                    TONEL2FAME. ALL RIGHTS RESERVED.
-                </p>
-
-                <a href="index.html#home">
-                    BACK TO HOME <i class="fa-solid fa-arrow-up"></i>
-                </a>
-
-            </div>
-
+        <div class="footer-bottom">
+            <span>© <span id="currentYear"></span> TONEL2FAME. ALL RIGHTS RESERVED.</span>
+            <a href="index.html">BACK TO HOME ↑</a>
         </div>
 
     </footer>
 
 
     <!-- LIGHTBOX -->
-    <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
 
         <button class="lightbox-close" id="lightboxClose" aria-label="Close image">
             <i class="fa-solid fa-xmark"></i>
         </button>
 
-        <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous image">
+        <button class="lightbox-arrow lightbox-prev" id="lightboxPrev" aria-label="Previous image">
             <i class="fa-solid fa-chevron-left"></i>
         </button>
 
-        <div class="lightbox-content">
-
+        <div class="lightbox-inner">
             <img src="" alt="" id="lightboxImage">
-
             <p id="lightboxCaption"></p>
-
         </div>
 
-        <button class="lightbox-next" id="lightboxNext" aria-label="Next image">
+        <button class="lightbox-arrow lightbox-next" id="lightboxNext" aria-label="Next image">
             <i class="fa-solid fa-chevron-right"></i>
         </button>
 
@@ -424,21 +330,21 @@
 
 
     <!-- WHATSAPP -->
-    <a
-        href="https://wa.me/2349161711509?text=Hello%20Tonel2Fame!%20I%20would%20like%20to%20make%20an%20enquiry."
-        class="floating-whatsapp"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chat with Tonel2Fame on WhatsApp">
+    <!-- FLOATING WHATSAPP BUTTON -->
+<a
+    href="https://wa.me/2349161711509?text=Hello%20Tonel2Fame!%20I%20would%20like%20to%20make%20an%20enquiry."
+    class="floating-whatsapp"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with Tonel2Fame on WhatsApp">
 
-        <i class="fa-brands fa-whatsapp"></i>
-        <span>Chat With Us</span>
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>Chat With Us</span>
 
-    </a>
+</a>
 
-
-    <!-- WEBSITE JAVASCRIPT -->
-    <script src="script.js"></script>
+<div class="nav-backdrop" id="navBackdrop"></div>
+    <script src="gallery.js"></script>
 
 </body>
 </html>

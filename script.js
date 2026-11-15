@@ -5,6 +5,16 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    // PAGE LOADER
+    const loader = document.getElementById("pageLoader");
+
+    const hideLoader = () => {
+        if (loader) loader.classList.add("loaded");
+    };
+
+    window.addEventListener("load", hideLoader, { once: true });
+    setTimeout(hideLoader, 2500);
+
     
 // MOBILE NAVIGATION
 const menuToggle = document.getElementById("menuToggle");

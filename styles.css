@@ -152,16 +152,13 @@ img {
 /* BOOKING BUTTON */
 
 .nav-booking {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 14px 23px;
+    padding: 14px 18px;
     border: 1px solid var(--gold);
     color: var(--gold);
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    transition: var(--transition);
+    font-size: 9px;
+    letter-spacing: 1.2px;
+    white-space: nowrap;
+    transition: .3s ease;
 }
 
 .nav-booking:hover {
@@ -196,6 +193,7 @@ img {
     background: var(--gold);
     transition: var(--transition);
 }
+
 
 /* =========================================
    HERO SECTION
@@ -452,8 +450,9 @@ img {
     }
 
     .nav-booking {
-        padding: 12px 15px;
-        font-size: 9px;
+        padding: 12px;
+        font-size: 8px;
+        
     }
 }
 
@@ -483,6 +482,7 @@ img {
         width: 100%;
         max-width: 250px;
     }
+    
 
     /* SIDE NAVIGATION DRAWER */
 
@@ -575,11 +575,11 @@ img {
     .mobile-booking {
         justify-content: center;
         align-items: center;
-        padding: 15px 20px;
+        padding: 12px ;
         border: 1px solid var(--gold);
         color: var(--gold);
-        font-size: 10px;
-        letter-spacing: 1.5px;
+        font-size: 8px;
+        letter-spacing: 0.5px;
         text-transform: uppercase;
         transition: var(--transition);
     }
@@ -2978,4 +2978,83 @@ img {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
+}
+
+/* LOADER */
+
+.page-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 1000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    background: var(--g-black);
+    transition: opacity .7s ease, visibility .7s ease;
+}
+
+.page-loader.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-logo {
+    font-family: var(--g-heading);
+    font-size: 25px;
+    letter-spacing: 4px;
+}
+
+.loader-logo span,
+.logo-two {
+    color: var(--g-gold);
+}
+
+.loader-line {
+    width: 150px;
+    height: 1px;
+    background: rgba(201,164,106,.2);
+    overflow: hidden;
+}
+
+.loader-line span {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: var(--g-gold);
+    transform: translateX(-100%);
+    animation: loaderMove 1.2s ease forwards;
+}
+
+@keyframes loaderMove {
+    to { transform: translateX(0); }
+}
+
+
+/* =========================================
+   SERVICE CARD PRICES
+========================================= */
+
+.service-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(201, 164, 106, 0.2);
+}
+
+.service-price span {
+    color: #A89D8D;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.service-price strong {
+    color: #C9A46A;
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    font-weight: 600;
 }
